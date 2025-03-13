@@ -119,8 +119,13 @@ public class LogisticMain {
                 System.out.print("Please insert destination city: ");
                 String dest = sc.nextLine();
                 System.out.print("Please enter your package weight: ");
-                double weight = sc.nextDouble();
-                sc.nextLine();
+                String weight = sc.nextLine();
+                double weightx = 0;
+                if (weight.isEmpty()) {
+                    
+                } else {
+                    weightx = Double.parseDouble(weight);
+                }
                 System.out.println();
                 Typography.center("Thank you for your cooperations.");
                 System.out.println("____________________________________________________________");
@@ -138,22 +143,21 @@ public class LogisticMain {
                 } else {
                     double baseFee = selectedDestination.getPricePerKg();
                     double totalFee = 0;
-                    if (weight == 1) {
+                    if (weightx == 1) {
                         totalFee = system.finalFee(5.0, selectedDestination.getPricePerKg());
-                    } else if (weight >= 2) {
-                        totalFee = system.finalFee(10.0, selectedDestination.getPricePerKg(), weight);
+                    } else if (weightx >= 2) {
+                        totalFee = system.finalFee(10.0, selectedDestination.getPricePerKg(), weightx);
                     } 
 
                     double finalFee = system.finalFee(selectedDestination.getKm(), totalFee);
                     String trackingNumber = Tracking.generateTrackingNumber();
                     
                     Package newPackage = new Package();
-                    if (sender.equals("") || receiver.equals("") || phone.equals("") || address.equals("") || dest.equals("") || weight == 0) {
-                        // dest = "Malang";
+                    if (sender.isEmpty() || receiver.isEmpty() || phone.isEmpty() || address.isEmpty() || dest.isEmpty() || weight.isEmpty()) {
                         newPackage = new Package();
                         system.addShipment("N/A", newPackage);
                     } else {
-                        newPackage = new Package(sender, receiver, phone, address, weight, baseFee, finalFee, trackingNumber, selectedDestination);
+                        newPackage = new Package(sender, receiver, phone, address, weightx, baseFee, finalFee, trackingNumber, selectedDestination);
                         system.addShipment(trackingNumber, newPackage);
                     }                    
                     
