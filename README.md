@@ -5,3 +5,5 @@ ini videonya aga (banyak) kelewatan.
 kalo ku percepet nanti jadi suara kelinci. jd kalo ga sempet nontonnya, nanti aku maw maju hari senin ehe. tengyu kak.
 # Link video: 
 https://drive.google.com/file/d/1pnTj_W1lsl2duzpxBOfcT63x8qilNI5l/view?usp=sharing
+# ini yg lebih singkat yahahahayuuuk
+https://drive.google.com/file/d/11yqSeoq-kO2Nm1rJFVtzqmIGTSmjnb7Y/view?usp=sharing
